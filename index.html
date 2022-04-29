@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/btn.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" />
+    <script type="text/javascript" src="js/Functions.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="frame">
+        <div class="container" id="header">
+            <div class="logo">
+                <img src="img/logo.png" style="width: 90px; height: 90px; background-color: white; margin:5px 10px;">
+                <p style="font-size: 70px; color: rgb(243, 109, 42);"> <b>ON MIND</b> </p>
+            </div>
+            <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+        </div>
+
+        <div class="container" id="newTask">
+            <p style="text-align: center;">NEW TASK</p>
+            <div class="NewTaskAdd">
+
+                <input type="text" id="task" required="required" placeholder="It’s time to start living the life you’ve imagined"
+                    oninvalid="this.setCustomValidity('Add New Task')" oninput="this.setCustomValidity('')">
+                <br>
+
+                <input type="radio" class="rdb" id="High" name="severity" style="accent-color: red;" />
+                <label for="1" style="font-size: 20px;font-family:'Handlee', cursive;">High</label> <br>
+                <input type="radio" class="rdb" id="Middle" name="severity" checked style="accent-color: green;" />
+                <label for="2" style="font-size: 20px;font-family:'Handlee', cursive;">Middle</label> <br>
+                <input type="radio" class="rdb" id="Low" name="severity" style="accent-color: blue;" />
+                <label for="3" style="font-size: 20px;font-family:'Handlee', cursive;">Low</label> <br>
+
+                <button id="btnAdd" class="button" onclick="Add()">ADD</button>
+
+            </div>
+        </div>
+        <div class="taskList">
+            <div class="container" id="todo" draggable="false">
+                <label>TO DO </label>
+                <hr style=" border-style:dashed;color: black; ">
+                <span id="no-task">--- NO TASK ---</span>
+
+                <div id="todolist">
+
+
+                </div>
+
+                <!-- <button id="btnStart11" class="button" onclick="Start()" ><span>START</span></button> ...-->
+
+            </div>
+
+            <div class="container" id="progress">
+                <label>PROGRESS </label><i class="fa-regular fa-circle-check"></i>
+                <hr style=" border-style:dashed;color: black; ">
+          
+               
+
+            </div>
+            <div class="container" id="completed">
+                <label>COMPLETED </label><i class="fa-solid fa-circle-check"></i>
+                <hr style=" border-style:dashed;color: black; ">
+                <ul id="completed" >
+
+
+                </ul>
+              
+            </div>
+
+        </div>
+
+</body>
+
+</html>
